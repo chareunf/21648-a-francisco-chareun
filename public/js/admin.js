@@ -5,6 +5,8 @@ const formNuevo = document.querySelector('#nueva-publicacion');
 formNuevo.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+
+
     const data = {
         titulo: document.querySelector('#titulo').value,
         detalle: document.querySelector('#detalle').value,
@@ -28,5 +30,6 @@ formNuevo.addEventListener('submit', async (e) => {
     alert(datos.msg)
 
     location.href = "/"
+
 
 })

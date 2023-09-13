@@ -2,18 +2,28 @@ const mostrarPublicaciones = (publicaciones, elementoHtml) => {
 
     let secciones = "";
     publicaciones.forEach( (pub) => {
-        secciones += `
-            <section class="d-flex gap-2">
-                <img src="${pub.url_imagen}" class="rounded" height="200" width="200" alt="${pub.titulo}" >
-                <div class="d-flex flex-column justify-content-between">
-                    <h4>${pub.titulo}</h4>
-                    <p>${pub.detalle}</p>
-                    <p>${pub.fecha}</p>
-                </div>
-            </section>
-
-        `
+        secciones +=   `
+        <div class="card mb-3   " style="max-width: 100%;">
+        <div class="row g-0">
+          <div class="col-md-4 img-conteiner">
+            <img src="${pub.url_imagen}" class="img-fluid rounded-start" alt="${pub.titulo}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${pub.titulo}</h5>
+              <p class="card-text">${pub.detalle}</p>
+              <p class="card-text"><small class="text-muted">${pub.fecha}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>`
+        
     })
+
+
+  
+
+
 
     elementoHtml.innerHTML = secciones;
     
